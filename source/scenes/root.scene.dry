@@ -590,7 +590,7 @@ Q.warhawkish = "0";
 !}
 set-bg: img/map_2.jpg
 new-page: true
-go-to: difficulty-menu
+go-to: difficulty_menu
 
 > "*Because, as Primo Levi, who was born in Turin 100 years ago and who survived Auschwitz as a forced labourer in Monowitz, later wrote: “It happened, therefore it can happen again.” So we cannot close our eyes and ears when people are being verbally abused, humiliated or marginalised. We must confront those who stir up prejudice and incite hatred against people of different faiths or origins.*"
 
@@ -609,7 +609,7 @@ For more information on the politics and government of the German Republic, see 
 - @credits
 
 @credits
-go-to: difficulty-menu
+go-to: difficulty_menu
 
 Original Modder: AntonPayne
 Current Team Manager: FrancoGamer

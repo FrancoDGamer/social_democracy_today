@@ -11,9 +11,9 @@ tags: party_affairs
 
 In our media and campaign materials, who should we consider as our main opponents?
 
-It should be noted that running a negative campaign would go against the stately behavior that Angela Merkel is most famous for.
-
 [? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
+
+It should be noted that running a negative campaign would go against the calm demeanor that Angela Merkel is most famous for.
 
 - @anti_dem: The anti-democratic parties of the far right and left - [? if not bsw_formed: Left and AfD. ?][? if bsw_formed: Left, BSW, and AfD. ?]
 - @esoteric: The esoteric parties - BSW and AfD.
@@ -23,7 +23,7 @@ It should be noted that running a negative campaign would go against the stately
 - @easy_discard
 
 @anti_dem
-on-arrival: enemies = "anti-democratic parties"; neoliberal_strength += 5; seeheimer_strength += 5; left_dissent += 5; workers_linke -= 2; workers_afd -= 2; workers_bsw -= 2; linke_relation -= 10; bsw_relation -= 10 if bsw_formed; merkelism -= 3
+on-arrival: enemies = "anti-democratic parties"; neoliberal_strength += 5; seeheimer_strength += 5; left_dissent += 5; workers_linke -= 2; workers_afd -= 2; workers_bsw -= 2; linke_relation -= 10; bsw_relation -= 10 if bsw_formed; merkelism -= 2
 
 Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties. This might also hamper our ability to reconcile with the Left Party in the future.
 
@@ -31,7 +31,7 @@ Attacking the far right and left is popular among all but the left wing of our p
 view-if: bsw_formed
 on-arrival: enemies = "esotericists"; workers_afd -= 3; workers_bsw -= 3; merkelism -= 2
 
-Attacking the esotericists is popular among the entire party, although the left considers the bourgeois parties to be just as dangerous, while our bourgeois coalition partners are apathetic to our actions.
+Attacking the esotericists is popular among the entire party, although the left considers the bourgeois parties to be just as dangerous, while the our bourgeois coalition partners are apathetic to our actions.
 
 @afd
 on-arrival: enemies = "AfD"; modernist_strength += 5; workers_afd -= 4; unemployed_afd -= 3 if nazi_urgency > 1; merkelism -= 2

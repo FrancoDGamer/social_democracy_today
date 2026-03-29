@@ -1,0 +1,41 @@
+title: Carmen Wegge
+is-pinned-card: true
+tags: advisor
+card-image: portraits/CarmenWegge.jpg
+view-if: wegge_advisor = 1
+new-page: true 
+
+= Carmen Wegge
+
+Carmen Wegge is an advocate for the rights of women and religious minorities. 
+
+- @womens_rights_
+- @islamophobia_1
+- @islamophobia_2
+- @root: Return to main
+
+@womens_rights_
+title: Women's rights
+subtitle: Enact policy with regards to women's rights.
+choose-if: advisor_action_timer = 0 and spd_in_government
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not currently in government. ?]
+on-arrival: advisor_action_timer = 6; womens_rights_timer -= 10; last_advisor_action = 1
+go-to: womens_rights
+
+@islamophobia_1
+title: Confronting Islamophobia
+subtitle: Bring attention to the rising hatred against Muslims in Germany.
+view-if: confronting_islamophobia == 0
+choose-if: advisor_action_timer = 0 and new_iron_front_formed == 1 and nazi_urgency >= 3
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not new_iron_front_formed == 1 : The SPD does not have an organization powerful enough to combat the present levels of Islamphobia. ?][? if nazi_urgency >= 3 : Islamophobia is not considered a major issue in our party yet. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+go-to: response_to_islamophobia
+
+@islamophobia_2
+title: Rallying Against Islamophobia
+subtitle: The New Iron Front must rally against Islamophobia and in defense of immigrant Germans.
+view-if: confronting_islamophobia > 1
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+go-to: new_iron_front.islamophobia

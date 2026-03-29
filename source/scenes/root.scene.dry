@@ -34,6 +34,9 @@ Q.old_demographics = 0;
 // TODO: not yet implemented
 Q.use_decimals = 0;
 
+// Has World War 3 begun yet?
+Q.ww3 = 0;
+
 // party resources
 Q.resources = 2;
 // party dues
@@ -405,6 +408,7 @@ Q.unemployment_insurance_seen = 0;
 // unemployment insurance event is seen if the unemployment level is at least 4 more than the threshold...
 Q.unemployment_insurance_threshold = 10;
 Q.blutmai = 0;
+Q.pole_election_seen = 0;
 
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = 0;
@@ -419,10 +423,10 @@ Q.land_reform = 0;
 // works-creation programs (i.e. WTB-plan) - how much have they implemented?
 Q.works_program = 0;
 Q.wtb_implemented = 0;
-// Relations with the EU countries
-Q.eu_relation = 0;
-// Relations with the USA
-Q.usa_relation = 0;
+// Relations with the Western EU countries
+Q.west_relation = 0;
+// Relations with the Eastern EU countries
+Q.east_relation = 0;
 // Relations with Russia
 Q.russia_relation = 0;
 // How much have we exposed the secret rearmament programs?
@@ -577,6 +581,12 @@ Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
 Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = 0; // Friedrich Stampfer
+
+// Franco Stuff
+Q.ukraine_stance = "None";
+Q.dovish = "1";
+Q.warhawkish = "0";
+
 !}
 set-bg: img/map_2.jpg
 new-page: true

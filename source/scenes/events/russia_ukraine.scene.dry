@@ -1,8 +1,8 @@
 title: Russia Invades Ukraine!
 new-page: true
-subtitle: A "special military operation" has surprised Europe
+subtitle: A "special military operation" has taken Europe by surprise
 tags: event
-view-if: year == 2022 and month >= 2 and russia_ukraine == 0
+view-if: year == 2022 and month >= 2 and russia_ukraine == 0 and presidential_election_seen = 1
 on-arrival: russia_ukraine += 1; merkelism -= 7; world_tension += 1
 max-visits: 1
 go-to: gov_menu if spd_in_government; oppo_menu if not spd_in_government and in_jamaica_coalition
@@ -33,37 +33,40 @@ Meanwhile, several communist and workers' parties are drafting up a joint statem
 @bundeswehr
 subtitle: We are living through a watershed era. To keep warmongers like Putin in check, we must improve our defenses.
 view-if: bundeswehr_minister_party == "SPD"
-on-arrival: greens_relations -= 2 if foreign_minister == "Trittin"; pacifism -= 1; nationalism += 5; bundeswehr_loyalty += 0.12 if bundeswehr_loyalty < 1; bundeswehr_strength += 20; left_dissent += 5; economic_growth -= 0.2; workers_afd += 4; unemployed_afd += 4; new_middle_afd += 3
+on-arrival: ukraine_stance = "Warhawk"; warhawkish += 4; greens_relations -= 2 if foreign_minister == "Trittin"; pacifism -= 1; nationalism += 5; bundeswehr_loyalty += 0.12 if bundeswehr_loyalty < 1; bundeswehr_strength += 20; left_dissent += 5; economic_growth -= 0.2; workers_afd += 5; unemployed_afd += 5; new_middle_afd += 3; new_middle_afd += 1 if foreign_minister == "Trittin" ; east_relation += 1
 on-departure: budget -= 2
 
 Chancellor [+ chancellor +] proclaims that the Russo-Ukrainian conflict is a historic turning point. An off-budget fund is approved to increase the combat effectiveness of the Bundeswehr. A quick scuffle follows to make Germany independent of Russian gas and oil. However, the anti-war segments of our party oppose this move. The AfD immediately capitalizes on this growing anti-war sentiment.
 
-[? if budget - 2 < 0 : The Bundestag allows exceptions to the debt ceiling in order to fund these military extravagences. ?][? if foreign_minister == "Trittin" : Foreign Minister [+ foreign_minister +] is displeased by such an aggressive stance. ?]
+[? if budget - 2 < 0 : The Bundestag allows exceptions to the debt ceiling in order to fund these military extravagences. ?] [? if foreign_minister == "Trittin" : Foreign Minister [+ foreign_minister +] is displeased by such an aggressive stance. His displeasure is a rallying point for the AfD, which promises to rid Germany of coalition infighting. ?]
 
+The countries in Eastern Europe, particularly Poland and the Baltics, are thrilled at the prospect of a militarily capable Germany.
 @sanctions
 subtitle: We must be quick to provide aid to Zelenskyy’s struggle. At the same time, we must cut economic ties with Russia.
-on-arrival: budget -= 1; bundeswehr_loyalty += 0.02 if bundeswehr_loyalty < 1; nationalism += 4; left_dissent += 2; economic_growth -= 0.4; workers_afd += 3; unemployed_afd += 3; new_middle_afd += 2
+on-arrival: ukraine_stance = "Warhawk"; warhawkish += 1; budget -= 1; bundeswehr_loyalty += 0.02 if bundeswehr_loyalty < 1; nationalism += 4; left_dissent += 2; economic_growth -= 0.4; workers_afd += 4; unemployed_afd += 4; new_middle_afd += 2
 
 Even if Germany does not militarily intervene in the Russo-Ukrainian conflict, we can join a coalition of European countries and impose strict sanctions against Russia. A quick scuffle follows to make Germany independent of Russian gas and oil. Both our anti-war membership and the center-right parties are dissatisfied with our vague stance. The AfD exploits our half-measures to draw away voters.
 
 @affirm
 subtitle: This invasion gives us a chance to atone for our militaristic past. As such, avoiding unnecessary escalation should be our priority.
 view-if: foreign_minister == "Trittin" and foreign_minister_party == "Greens"
-on-arrival: pacifism += 1; workers_greens += 1; workers_linke -= 1; workers_afd += 4; left_strength += 2; left_dissent -= 3; unemployed_afd += 3; new_middle_afd += 3; economic_growth -= 0.2; seeheimer_dissent += 3; neoliberal_dissent += 3
+on-arrival: ukraine_stance = "Dove"; pacifism += 1; workers_greens += 1; workers_linke -= 1; workers_afd += 4; left_strength += 2; left_dissent -= 3; unemployed_afd += 3; new_middle_afd += 2; economic_growth -= 0.3; seeheimer_dissent += 3; neoliberal_dissent += 3; east_relation -= 1
 
-We mirror [+ foreign_minister +]'s stance on this conflict and promote diplomacy instead of military intervention. As such, we avoid placing sanctions on Russia. Still, it is clear that the invasion has sent shockwaves throughout the global economy, and Germany has suffered too. However, the non-leftist segments of our party oppose our friendly attitude towards Russia. The AfD immediately capitalizes on the anti-Russian crowd.
+We mirror [+ foreign_minister +]'s stance on this conflict and promote diplomacy instead of military intervention. Still, he agrees to impose strict sanctions against Russia. A quick scuffle follows to make Germany independent of Russian gas and oil. However, the non-leftist segments of our party oppose our friendly attitude towards Russia. The AfD immediately capitalizes on the anti-Russian crowd.
+
+The countries in Eastern Europe, particularly Poland and the Baltics, are concerned by our indifference towards the supposed need to combat Russia.
 
 @criticize_hawkish
 subtitle: Such rhetoric is highly dangerous and runs the risk of avoidable escalation.
 view-if: foreign_minister_party != "SPD" and foreign_minister != "Trittin"
-on-arrival: budget -= 1; economic_growth -= 0.4; workers_greens -= 2 if not in_grand_coalition; workers_cdu -= 2 if in_grand_coalition; workers_spd -= 2; workers_afd += 4; unemployed_afd += 3; new_middle_afd += 2; coalition_dissent += 1
+on-arrival: ukraine_stance = "Dove"; dovish += 1; budget -= 1; economic_growth -= 0.5; workers_greens -= 2 if not in_grand_coalition; workers_cdu -= 2 if in_grand_coalition; workers_spd -= 2; workers_afd += 4; unemployed_afd += 3; new_middle_afd += 2; coalition_dissent += 1
 
 We criticize [+ foreign_minister +]'s sabre-rattling and call for a more peaceful foreign policy when dealing with Russia. The newfound hawks in the [+ foreign_minister_party +] are shocked by our intransigence but this pleases our left wing. Despite our hesitancy, a quick scuffle follows to make Germany independent of Russian gas and oil. The AfD immediately capitalizes on the coalition infighting.
 
 @criticize_dovish
 subtitle: Such rhetoric is too naive and severely underestimates the threat posed by Putin.
 view-if: foreign_minister_party == "Greens" and foreign_minister == "Trittin"
-on-arrival: budget -= 1; economic_growth -= 0.3; greens_relations -= 4; cdu_relations += 3; workers_greens -= 3; workers_spd -= 3; workers_afd += 5; unemployed_afd += 4; new_middle_afd += 3; coalition_dissent += 1
+on-arrival: ukraine_stance = "Warhawk"; warhawkish += 1; budget -= 1; economic_growth -= 0.4; greens_relations -= 4; cdu_relations += 3; workers_greens -= 3; workers_spd -= 3; workers_afd += 5; unemployed_afd += 4; new_middle_afd += 3; coalition_dissent += 1
 on-departure: foreign_minister = "Habeck"
 
 We criticize [+ foreign_minister +]'s naivety and call for a more aggressive foreign policy when dealing with Russia. The old doves in the Greens are shocked by our intransigence but this pleases everyone in our party except for our left wing. Jürgen Trittin resigns amidst our criticism, letting the more interventionist Robert Habeck take his place. Due to our protests, a quick scuffle follows to make Germany independent of Russian gas and oil. The AfD immediately capitalizes on this affair, claiming to represent a new Germany without coalition politics.
@@ -71,9 +74,11 @@ We criticize [+ foreign_minister +]'s naivety and call for a more aggressive for
 @ostenpolitik
 subtitle: Just like Willy Brandt spearheaded a new era of East-West relations, we too must seek peace.
 view-if: foreign_minister_party == "SPD"
-on-arrival: economic_growth -= 0.3; pacifism += 1; greens_relations -= 4; cdu_relations -= 3; nationalism += 2; new_middle_spd -= 2; new_middle_greens -= 2; workers_afd += 2; unemployed_afd += 3; new_middle_afd += 3; coalition_dissent += 1; left_strength += 3; left_dissent -= 5; seeheimer_dissent += 3; neoliberal_dissent += 3
+on-arrival: ukraine_stance = "Dove"; dovish += 2; economic_growth -= 0.3; pacifism += 1; greens_relations -= 4; cdu_relations -= 3; nationalism += 2; new_middle_spd -= 2; new_middle_greens -= 2; workers_afd += 2; unemployed_afd += 3; new_middle_afd += 3; coalition_dissent += 1; left_strength += 3; left_dissent -= 5; seeheimer_dissent += 3; neoliberal_dissent += 3; east_relation -= 1
 
 We advocate for easing tensions with the East, promoting a peaceful end to the Russo-Ukrainian conflict. The newfound hawks in the [? if not in_grand_coalition : Greens ?][? if in_grand_coalition : CDU ?] are shocked by our intransigence. Amidst rising criticism of Putin, we are forced to impose slight restrictions on Russian goods into Germany. However, the non-leftist segments of our party oppose our friendly attitude towards Russia. The AfD immediately capitalizes on locking up the hawkish vote.
+
+The countries in Eastern Europe, particularly Poland and the Baltics, are concerned by our indifference towards the supposed need to combat Russia.
 
 @oppo_menu
 
@@ -83,6 +88,40 @@ As we are the leader of the opposition, we are expected to provide a response to
 
 Meanwhile, several communist and workers' parties are drafting up a joint statement unequivocally condemning the conflict, criticizing the bourgeoise governments of both Russia and Ukraine.
 
-# - @support
-# - @no_comment
-# - @join
+- @full_support: We shall provide full support to the Jamaica Coalition in their plans for ensuring European security. 
+- @sanctions_only: We shall support placing punitive sanctions on Russia, but refrain from endorsing any further military escalation.
+- @criticize: We shall criticize the Jamaica Coalition's handling of the invasion.
+- @join: Could we join the Solidnet parties in their joint statement?
+
+@full_support
+subtitle: In times of war, party politics must take a backseat. Germany’s credibility in Europe and abroad depends on unity.
+on-arrival: ukraine_stance = "Dove"
+
+@sanctions_only
+subtitle: We must use every economic tool available to punish Russian warmongering, but the SPD refuses to fuel the military-industrial complex by sending arms that could escalate this conflict.
+on-arrival: ukraine_stance = "Warhawk"
+
+@criticize
+subtitle: The basic fundamentals of the governing coalition's plans for Ukraine are flawed. It is the duty of the opposition to expose these flaws.
+
+As the leader of the opposition, it is our duty to point out the failings of the governing coalition. The question is: what is the Jamaica Coalition doing wrong?
+
+- @defence: The coalition has neglected Germany’s defenses.
+- @hawkish: The coalition has failed to pursue diplomacy.
+
+@defence
+on-arrival: ukraine_stance = "Warhawk"; dovish += 2; budget -= 2; merkelism += 2; left_dissent += 3; nationalism += 3; bundeswehr_loyalty += 0.12 if bundeswehr_loyalty < 1; bundeswehr_strength += 20; economic_growth -= 0.2;
+
+We criticize the coalition for sending arms to Ukraine without any investments in the Bundeswehr. Upon their priorities being exposed as incorrect, the center-right coalition cowardly has to bend to our demands and modify their off-budget fund to redirect the money intended for Ukraine to be put into the Bundeswehr. The SPD and AfD benefit among those who are disappointed with the coalition.
+
+@hawkish
+on-arrival: ukraine_stance = "Dove"; warhawkish += 1; budget -= 2; pacifism += 1; greens_relations -= 4; cdu_relations -= 4; fdp_relations -= 2; nationalism += 2; new_middle_spd -= 2; workers_greens -= 1; workers_linke += 2; workers_afd += 2; unemployed_afd += 3; new_middle_afd += 3; left_strength += 3; left_dissent -= 4; seeheimer_dissent += 3; neoliberal_dissent += 3; east_relation -= 1
+
+We criticize the coalition for sending arms to Ukraine without any attempts to broker a peace deal. While this pleases the dovish vote, it is not an argument that the center-right coalition is sympathetic to. The off-budget fund passes without our support, imposing sanctions on Russia and supply weapons to Ukraine.
+
+The countries in Eastern Europe, particularly Poland and the Baltics, are concerned that when the SPD comes into government, we will not adequately represent them.
+
+@join
+subtitle: If the capitalist governments of East and West are dragging Europe toward catastrophe, perhaps a principled anti-imperialist stance is the only morally consistent option.
+view-if: mutzenich_advisor = 1 and left_strength > seeheimer_strength + neoliberal_strength and left_strength >= 50
+on-arrival: ukraine_stance = "AntiImperialist";

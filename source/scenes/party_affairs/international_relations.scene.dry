@@ -11,12 +11,13 @@ max-visits: 7
 At the Progressive Alliance, we can forge contacts with our fraternal socialist parties in Europe and across the world.
 
 - @fr_sp: Build relationships with the French PS and Spanish PSOE to move their governments in Germany's favor.
-- @poles_1: Can we invite the Polish NL to the Progressive Alliance?
-- @poles_2: Deepen ties with the Polish NL to move their government in Germany's favor.
+- @poland_oppo: Can we invite the Polish NL to the Progressive Alliance?
+- @poland_gov: Can we invite the Polish NL to the Progressive Alliance?
+- @poland: Deepen ties with the Polish NL to move their government in Germany's favor.
 - @myanmar: Learn organization and street fighting from the Myanma DPNS.
 - @scandi: Learn the path of economics and reform from the Scandinavian social democrats.
 - @america: Contact the Trade Union Confederation of the Americas.
-- @china: Forget the Progressive Alliance - organize a conference with the Chinese communists.
+- @china: Forget the Progressive Alliance - host a conference with the Chinese communists.
 - @return: We do not need international contacts at the moment.
 - @easy_discard
 - @cancel_advisor_action
@@ -29,17 +30,27 @@ on-arrival: resources -= 1; west_relation += 1; seeheimer_strength += 5; pacifis
 
 The social democrats of France and Spain could influence their governments to be friendlier with Germany in the future, paving the way for European unity.
 
-@poles_1
-subtitle: [? if not pole_election_seen: -1 ?][? if pole_election_seen: -2 ?] resources
-max-visits: 1
-choose-if: (resources >= 1 and not pole_election_seen) or (resources >= 2 and pole_election_seen)
-on-arrival: nl_in_pa += 1; resources -= 1; resources -= 1 if pole_election_seen
+@poland_oppo
+subtitle: -1 resources
+view-if: pole_election_seen = 0 and poland_in_pa = 0
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; poland_in_pa += 1
 
-[? if not pole_election_seen: New Left (*Nowa Lewica*) is a fledgling social democratic party with pro-European views. While they agree to join the Progressive Alliance, it is unlikely that they can unseat the right-wing Law and Justice in the 2023 parliamentary elections. ?]
-[? if pole_election_seen: New Left (*Nowa Lewica*) is a part of the center-left governing coalition that unseated the right-wing Law and Justice. While they agree to join the Progressive Alliance, they do not control the post of Prime Minister. ?]
+New Left (*Nowa Lewica*) is a fledgling social democratic party with pro-European views. While they agree to join the Progressive Alliance, it is unlikely that they can unseat the right-wing Law and Justice in the 2023 parliamentary elections.
 
-@poles_2
-view-if: nl_in_pa > 0 and pole_election_seen
+@poland_gov
+subtitle: -2 resources
+view-if: pole_election_seen = 1 and poland_in_pa = 0
+choose-if: resources >= 2
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; poland_in_pa += 1
+
+New Left (*Nowa Lewica*) is a part of the center-left governing coalition that unseated the right-wing Law and Justice. While they agree to join the Progressive Alliance, they do not control the post of Prime Minister.
+
+@poland
+subtitle: -1 resources
+view-if: poland_in_pa > 0 and pole_election_seen
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources
 on-arrival: resources-= 1; east_relations += 1
@@ -69,12 +80,12 @@ The programs of the Nordic socialists involve active government intervention in 
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; linke_relation += 5*(1-dissent); communist_coalition += 1 if china_seen == 0; china_seen += 1; west_relation -= 1 if year <= 2025
+on-arrival: resources -= 1; left_strength += 5; linke_relation += 5*(1-dissent); communist_coalition += 1 if china_seen == 0; china_seen += 1; west_relation -= 1 if year >= 2025
 
 We host a conference with the Communist Party of China (CPC) on the history of socialism in China and Germany. This can also help us outflank Die Linke from the left in the future.
 
-[? if year <= 2025 : President Joseph Biden is joined by many European countries in criticizing us for meeting with the CPC. ?]
-[? if year >= 2025 : With Donald Trump leading the United States, many who previously mocked the idea that the 21st century is the "Chinese Century" are now welcoming closer ties with China. ?]
+[? if year <= 2025: President Joseph Biden is joined by many Western European countries in expressing their  us for meeting with the CPC. ?]
+[? if year >= 2025: With Donald Trump leading the United States, many who previously mocked the idea that the 21st century is the "Chinese Century" are now welcoming closer ties with China. ?]
 
 @america
 subtitle: -1 resources
@@ -82,7 +93,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; labor_strength += 10; labor_dissent -= 10; left_dissent += 5
 
-Fred Redmond greatly appreciates our aid and the Trade Union Confederation of the Americas helps us organize strikes. However, the Confederation's uncritically pro-American bias angers some of our membership.
+Fred Redmond greatly appreciates our aid and the Trade Union Confederation of the Americas helps us organize strikes. However, the Confederation's past support for various pro-American dictatorships in Latin America angers some of our membership.
 
 @return
 

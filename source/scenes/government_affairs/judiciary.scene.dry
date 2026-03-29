@@ -3,6 +3,7 @@ new-page: true
 is-card: true
 view-if: spd_in_government = 1 and justice_minister_party = "SPD" and judiciary_timer = 0
 on-arrival: month_actions += 1; judiciary_timer += 6
+go-to: judge_menu
 card-image: img/portraits/RadbruchGustav.jpg
 tags: govt_affairs, cabinet
 
@@ -14,8 +15,11 @@ The Judiciary is one of the most reactionary components of the government, along
 [? if judicial_reform == 1 : We have started on the path to judicial reform. While some of the most antideluvian and biased justices have been replaced, many still remain. More should be done. ?]
 [? if judicial_reform >= 2 : We have successfully reformed the judiciary, to some extent. At the very least, the courts will not actively obstruct our attempts to prosecute crimes committed by the far-right. ?]
 
+@judge_menu
+
 - @reform: Carry out substantial judicial reforms,
-- @minor_reforms: Carry out minor judicial reforms.
+- @minor_reform: Carry out minor judicial reforms.
+- @lay_judges: We must reform the system for electing lay judges.
 - @as_is: Leave the judiciary as it is.
 - @easy_discard
 - @cancel_advisor_action
@@ -28,10 +32,29 @@ on-arrival: budget -= 1; democratization += 2; coalition_dissent += 1 if in_gran
 
 We investigate jurists who have shown themselves to have biased or corrupt behavior, and try to remove them, replacing them with more democratically-oriented jurists. This obviously raises quite a great deal of ire in conservative circles, including within our coalition. 
 
-@minor_reforms
+@minor_reform
 on-arrival: democratization += 1; workers_spd += 3*(1-dissent) if democratization >= 3; judicial_reform += 1; pro_republic += 3*(1-dissent); judiciary_timer += 6
 
 We try to remove the most obviously biased and corrupt jurists, while leaving most of the system intact. It is slow work reforming the judiciary.
+
+@lay_judges
+subtitle: The low hurdles for becoming a lay judge have an enticing effect on those with antidemocratic views.
+view-if: year >= 2023
+
+The participation of lay judges in judicial proceedings is partly intended as a symbolic guarantee that court rulings are handed down "in the name of the people".
+
+To become a lay judge, a candidate must fulfill only a small number of requirements. He or she must have German citizenship and be between 25 and 69 years of age. The candidate must neither be involved in ongoing criminal proceedings nor have served a prison sentence of more than six months. Legal knowledge is no prerequisite.
+
+Right-wing extremists exploit these lax criteria to openly call on their supporters to apply as lay judges "in order not to leave the judiciary in the hands of left-wing hobby judges". An amendment to Section 44a of the German Judiciary Act could grant the Justice Ministry the power to remove lay judges who do not provide guarantees that they will advocate the liberal democratic basic order all times.
+
+- @lay_judges_2: Call a vote to pass the reform!
+- @judge_menu: There are other ways to reform the judiciary.
+
+@lay_judges_2
+choose-if: zimbabwe_coalition >= 66
+unavailable-subtitle: We do not have enough support for this policy.
+
+We have successfully passed a constitutional amendment to tighten the process of becoming a lay judge. Backlash from the AfD was expected, as their base is the most affected. However, the far-right warn that this amendment could be used against them as well.
 
 @as_is
 go-to: root

@@ -307,7 +307,13 @@ Black-Yellow Coalition (CDU + CSU + FDP): [+ black_yellow_coalition +]%
 
 Jamaica Coalition (CDU + CSU + FDP + Greens): [+ jamaica_coalition +]%
 
-[? if nazi_urgency <= 1 and afd_r >= 20 : The rapid rise in AfD votes is extremely worrying. Many had believed that the party was moribound; now, some of us consider it to be the greatest threat to democracy in Germany. ?][? if linke_votes < 5 and linke_votes >= 4.6 : The Left Party failed to meet the 5% threshold for the first time since 2002. However, since three of their MPs won direct mandates in Berlin, the party will be allotted seats in the Bundestag proportional to their vote share. ?][? if linke_r = 0 : The Left Party failed to meet the 5% threshold for the first time since 2002. This leaves them with only two MPs who won direct mandates in Berlin to represent them in the Bundestag. ?][? if bsw_formed and bsw_r = 0 : Contrary to many polls, the BSW failed to cross the 5% threshold, meaning that they will not hold any seats in the Bundestag. ?]
+[? if nazi_urgency <= 1 and afd_r >= 20 : The rapid rise in AfD votes is extremely worrying. Many had believed that the party was moribound; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
+
+[? if year = 2021: The South Schleswig Voters' Association (SSW) contested their first federal election since 1961. As a party for the national Danish minority in Southern Schleswig, the SSW is not subject to the general requirement of passing a 5% vote threshold to gain proportional seats in the Bundestag. As such, the official final result gave them one seat, their first since the 1953 federal elections. ?][? if year > 2021: The South Schleswig Voters' Association (SSW), a party for the national Danish minority in Southern Schleswig, retained their single seat in the Bundestag. ?]
+
+[? if linke_votes < 5 and linke_votes >= 4.6 : The Left Party failed to meet the 5% threshold for the first time since 2002. However, since three of their MPs won direct mandates in Berlin, the party will be allotted seats in the Bundestag proportional to their vote share. ?]
+[? if linke_r = 0 : The Left Party failed to meet the 5% threshold for the first time since 2002. This leaves them with only two MPs who won direct mandates in Berlin to represent them in the Bundestag. ?]
+[? if bsw_formed and bsw_r = 0 : Contrary to many polls, the BSW failed to cross the 5% threshold, meaning that they will not hold any seats in the Bundestag. ?]
 
 [? if anti_democratic_coalition >= 50 : Together, the anti-establishmentarian Left Party, AfD, and BSW have a majority in the Bundestag. A stable governing majority will be almost impossible. ?]
 
@@ -967,7 +973,7 @@ We have won the vote of no confidence, and are currently ruling under an SPD min
 title: We can form a "Germany" Coalition.
 subtitle: SPD + CDU + CSU + FDP ([+ germany_coalition +]%)
 view-if: germany_coalition >= 50 and grand_coalition < 50 and social_liberal_coalition < 50
-on-arrival: leverage += 5; leverage += 5 if cdu_party_leader == "Röttgen"; in_germany_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_coalition = 0; foreign_minister_party = "CDU"; interior_minister_party = "CSU"; justice_minister_party = "FDP"; labor_minister_party = "CDU"; bundeswehr_minister_party = "I"; economic_minister_party = "FDP"; finance_minister_party = "CDU"; agriculture_minister_party = "CDU"; foreign_minister = "Röttgen"; interior_minister = "Röttgen"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; bundeswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
+on-arrival: leverage += 5; leverage += 5 if cdu_party_leader == "Röttgen"; in_germany_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_coalition = 0; foreign_minister_party = "CDU"; interior_minister_party = "CSU"; justice_minister_party = "FDP"; labor_minister_party = "CDU"; bundeswehr_minister_party = "I"; economic_minister_party = "FDP"; finance_minister_party = "CDU"; agriculture_minister_party = "CDU"; foreign_minister = "Röttgen"; interior_minister = "Röttgen"; justice_minister = "Buschmann"; labor_minister = "Stegerwald"; bundeswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
 achievement: germany_coalition
 
 We have enough votes to form a "Germany Coalition" government consisting of the SPD, CDU, and FDP. The voters were tired of grand coalitions. And what do they get in return? The FDP as a dollop of cream on top! At least we can form a stable government...
@@ -994,7 +1000,7 @@ Rolf Mützenich has been appointed chancellor.
 title: We can form a "Red-Yellow" Coalition.
 subtitle: SPD + FDP ([+ red_yellow_coalition +]%)
 view-if: red_yellow_coalition >= 50
-on-arrival: leverage += 5; leverage += 5 if cdu_party_leader == "Röttgen"; in_germany_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_coalition = 0; foreign_minister_party = "CDU"; interior_minister_party = "CSU"; justice_minister_party = "FDP"; labor_minister_party = "CDU"; bundeswehr_minister_party = "I"; economic_minister_party = "FDP"; finance_minister_party = "CDU"; agriculture_minister_party = "CDU"; foreign_minister = "Röttgen"; interior_minister = "Röttgen"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; bundeswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
+on-arrival: leverage += 5; leverage += 5 if cdu_party_leader == "Röttgen"; in_germany_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_coalition = 0; foreign_minister_party = "CDU"; interior_minister_party = "CSU"; justice_minister_party = "FDP"; labor_minister_party = "CDU"; bundeswehr_minister_party = "I"; economic_minister_party = "FDP"; finance_minister_party = "CDU"; agriculture_minister_party = "CDU"; foreign_minister = "Röttgen"; interior_minister = "Röttgen"; justice_minister = "Buschmann"; labor_minister = "Stegerwald"; bundeswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
 
 We have enough votes to form a "Red Yellow" government consisting of the SPD and FDP
 
@@ -1011,7 +1017,7 @@ Who should be the chancellor?
 title: We can form a "Red-Green" Coalition.
 subtitle: SPD + Greens ([+ red_green_coalition +]%)
 view-if: red_green_coalition >= 50
-on-arrival: leverage += 5; leverage += 5 if cdu_party_leader == "Röttgen"; in_germany_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_coalition = 0; foreign_minister_party = "CDU"; interior_minister_party = "CSU"; justice_minister_party = "FDP"; labor_minister_party = "CDU"; bundeswehr_minister_party = "I"; economic_minister_party = "FDP"; finance_minister_party = "CDU"; agriculture_minister_party = "CDU"; foreign_minister = "Röttgen"; interior_minister = "Röttgen"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; bundeswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
+on-arrival: leverage += 5; leverage += 5 if cdu_party_leader == "Röttgen"; in_germany_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_coalition = 0; foreign_minister_party = "CDU"; interior_minister_party = "CSU"; justice_minister_party = "FDP"; labor_minister_party = "CDU"; bundeswehr_minister_party = "I"; economic_minister_party = "FDP"; finance_minister_party = "CDU"; agriculture_minister_party = "CDU"; foreign_minister = "Röttgen"; interior_minister = "Röttgen"; justice_minister = "Buschmann"; labor_minister = "Stegerwald"; bundeswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
 
 We have enough votes to form a "Red Green" government consisting of the SPD and the Greens
 
@@ -1028,7 +1034,7 @@ Who should be the chancellor?
 title: We can form a "Kenya" Coalition.
 subtitle: SPD + CDU + Greens ([+ kenya_coalition +]%)
 view-if: red_yellow_coalition >= 50
-on-arrival: leverage += 5; leverage += 5 if cdu_party_leader == "Röttgen"; in_germany_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_coalition = 0; foreign_minister_party = "CDU"; interior_minister_party = "CSU"; justice_minister_party = "FDP"; labor_minister_party = "CDU"; bundeswehr_minister_party = "I"; economic_minister_party = "FDP"; finance_minister_party = "CDU"; agriculture_minister_party = "CDU"; foreign_minister = "Röttgen"; interior_minister = "Röttgen"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; bundeswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
+on-arrival: leverage += 5; leverage += 5 if cdu_party_leader == "Röttgen"; in_germany_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_coalition = 0; foreign_minister_party = "CDU"; interior_minister_party = "CSU"; justice_minister_party = "FDP"; labor_minister_party = "CDU"; bundeswehr_minister_party = "I"; economic_minister_party = "FDP"; finance_minister_party = "CDU"; agriculture_minister_party = "CDU"; foreign_minister = "Röttgen"; interior_minister = "Röttgen"; justice_minister = "Buschmann"; labor_minister = "Stegerwald"; bundeswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
 
 We have enough votes to form a "Kenya" government consisting of the SPD, CDU and the Greens
 
@@ -1421,7 +1427,7 @@ go-to: ministries
 title: Environment Ministry
 subtitle: This is the favourite ministry of the Greens.
 view-if: environment_minister_party != "SPD"
-on-arrival: leverage -= 5; environment_minister_party = "SPD"; environment_minister = "Schulze"
+on-arrival: leverage -= 10; environment_minister_party = "SPD"; environment_minister = "Schulze"
 tags: mins_1928
 go-to: ministries
 
@@ -1433,11 +1439,11 @@ subtitle: This is not our usual domain.
 unavailable-subtitle: We do not have enough leverage.
 choose-if: leverage >= 10 
 view-if: agriculture_minister_party != "SPD"
-on-arrival: leverage -= 10; agriculture_minister_party = "SPD"; agriculture_minister = "Mittag"
+on-arrival: leverage -= 10; agriculture_minister_party = "SPD"; agriculture_minister = "Schmidt"
 go-to: ministries
 tags: mins_1928
 
-Susanne Mittag of the SPD has been appointed Agriculture Minister.
+Uwe Schmidt of the SPD has been appointed Agriculture Minister.
 
 @bundeswehr
 title: Bundeswehr Ministry
@@ -1461,7 +1467,7 @@ This coalition arrangement is tolerable to all.
 @drop_labor
 title: Drop the Labor Ministry.
 view-if: labor_minister_party = "SPD"
-on-arrival: labor_minister_party = "CDU"; labor_minister = "Stegerwald"; leverage += 5;
+on-arrival: labor_minister_party = "CDU"; labor_minister = "Claus"; leverage += 5;
 tags: drop_mins_1928
 go-to: ministries
 
@@ -1489,7 +1495,7 @@ go-to: ministries
 @drop_justice
 title: Drop the Justice Ministry.
 view-if: justice_minister_party = "SPD"
-on-arrival: justice_minister_party = "FDP"; justice_minister = "Koch-Weser"; leverage += 10;
+on-arrival: justice_minister_party = "FDP"; justice_minister = "Buschmann" if justice_minister_party = "FDP"; leverage += 10;
 tags: drop_mins_1928
 go-to: ministries
 
@@ -1503,7 +1509,7 @@ go-to: ministries
 @drop_environment
 title: Drop the Environment Ministry
 view-if: environment_minister_party = "SPD"
-on-arrival: leverage += 5; environment_minister_party = "Greens"; environment_minister = "Lemke"; environment_minister_party = "CSU" if in_grand_coalition or in_germany_coalition; environment_minister_party = "FDP" if in_social_liberal_coalition; environment_minister = "Köhler" if in_social_liberal_coalition
+on-arrival: leverage += 10; environment_minister_party = "Greens"; environment_minister = "Lemke"; environment_minister_party = "CSU" if in_grand_coalition or in_germany_coalition; environment_minister_party = "FDP" if in_social_liberal_coalition; environment_minister = "Köhler" if in_social_liberal_coalition
 tags: drop_mins_1928
 go-to: ministries
 

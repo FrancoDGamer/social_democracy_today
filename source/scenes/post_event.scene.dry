@@ -482,6 +482,19 @@ if (this.ui && this.ui.show_portraits) {
 
 if (typeof window !== "undefined" && window.generateBar) {
 }
+
+if (Q.ukraine_stance == "Dove") {
+    Q.new_middle_afd -= 0.1*((Q.warhawkish)*(Q.dovish)/10 + 1); Q.new_middle_linke -= 0.1*((Q.warhawkish)*(Q.dovish)/10 + 1);
+    Q.old_middle_afd -= 0.1*((Q.warhawkish)*(Q.dovish)/10 + 1); Q.old_middle_linke -= 0.1*((Q.warhawkish)*(Q.dovish)/10 + 1);
+
+}
+
+if (Q.ukraine_stance == "Warhawk") {
+    Q.new_middle_afd += 0.1*((Q.dovish+1)*(Q.warhawkish+1)/10); Q.new_middle_linke += 0.1*((Q.dovish+1)*(Q.warhawkish+1)/10);
+    Q.old_middle_afd += 0.1*((Q.dovish+1)*(Q.warhawkish+1)/10); Q.old_middle_linke += 0.1*((Q.dovish+1)*(Q.warhawkish+1)/10);
+
+}
+
 !}
 go-to: events_choice if has_event = 1; main if has_event = 0 and difficulty >= 0; main.main_easy if has_event = 0 and difficulty < 0
 

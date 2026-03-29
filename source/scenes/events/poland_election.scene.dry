@@ -1,0 +1,71 @@
+title: Polish Parliamentary Elections
+subtitle: The reign of the right-wing Law and Justice is to be challenged...
+view-if: year = 2023 and month = 10 and pole_election_seen = 0
+max-visits: 1
+tags: event
+new-page: true
+on-arrival: pole_election_seen += 1
+face-image: img/download.jpg
+
+= 2023 Polish Parliamentary Elections
+
+Parliamentary elections are to be held in Poland on 15 October 2023 to elect members of the Sejm and Senate. A referendum containing four questions concerning economic and immigration policy of the government is to be held simultaneously.
+
+The incumbent Law and Justice (PiS) is a national-conservative party led by Prime Minister Mateusz Morawiecki. It has been accused of authoritarianism and contributing to democratic backsliding, and attracted widespread international criticism and domestic protest movements.
+
+The opposition parties have been the target of intense media demonization and political witch hunts in the leadup to the election. One of these parties is the social democratic New Left.
+ 
+- @pessimist: Let me guess...another victory for the right?
+- @optimist: The opposition will defeat the right!
+
+@pessimist
+subtitle: That does seem to be the current trend, in Europe and abroad.
+go-to: poland_1
+
+Surprisingly, no.
+
+@optimist
+subtitle: That would need a miracle to happen.
+go-to: poland_1
+
+And sometimes, miracles *do* happen.
+
+@poland_1
+
+PiS and its coalition partners acquired 194 Sejm seats, falling short of the 231 needed for a majority government. Meanwhile, the opposition won a surprising 65 seats in the 100-seat Senate.
+
+Upon learning of the results, the leaders of Civic Coalition, Poland 2050, Polish People's Party, and New Left stated they are ready to form a government with Donald Tusk as their candidate for prime minister.
+
+- @poland_2: President Andrzej Duda has another plan in mind.
+
+@poland_2
+subtitle: You thought the PiS would give up power so easily?
+
+President Duda named Law and Justice's incumbent prime minister, Mateusz Morawiecki, as his prime ministerial nominee. This move was criticized by the opposition, as no other bloc had agreed to join them for coalition talks.
+
+Defying the president, Civic Coalition, Poland 2050, Polish People's Party, and New Left signed a coalition agreement with Donald Tusk as their candidate for prime minister. The opposition parties wanted to sign the agreement before the Sejm's first sitting in order to show that they stood ready to govern.
+
+Mateusz Morawiecki was sworn in by President Duda for an unprecedented third term as Prime Minister. Morawiecki is required to secure the Sejm's confidence within two weeks of being sworn in.
+
+- @poland_3: Morawiecki fails to acquire the Sejm's confidence!
+
+@poland_3
+subtitle: The PiS had the highest spending in this election campaign...all for *that* to happen?
+
+Most commentators had expected Morawiecki to come up short of the support needed to govern, as no other party willing to go into coalition with PiS would give it enough support to command the confidence of the Sejm.
+
+Later that day, the Sejm nominated Tusk for prime minister, who was subsequently confirmed by 248 votes in favour and 201 against. Tusk's cabinet will be sworn in on 13 December. The New Left's Krzysztof Gawkowski has been chosen as the Deputy Prime Minister.
+
+- @progressive_alliance: Good thing the New Left is part of our Progressive Alliance!
+- @shame: We should have invited the New Left to the Progressive Alliance...
+
+@progressive_alliance
+view-if: poland_in_pa > 0
+on-arrival: east_relations += 1
+
+With its four cabinet positions, the New Left can help put pressure on the Tusk administration to pursue friendlier ties with Germany.
+
+@shame
+view-if: poland_in_pa = 0
+
+That was indeed a missed opportunity.

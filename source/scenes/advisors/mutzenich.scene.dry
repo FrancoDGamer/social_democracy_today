@@ -20,7 +20,7 @@ title: International Party Relations
 subtitle: Mützenich is one of our contacts with international socialist parties.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer == 0
-on-arrival: advisor_action_timer = 6; international_relations_timer -= 6; last_advisor_action = 1
+on-arrival: advisor_action_timer = 6; international_relations_timer -= 12; last_advisor_action = 1
 go-to: international_relations
 
 @mutzenich_foreign

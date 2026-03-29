@@ -1,0 +1,11 @@
+title: Seeheimers Resign
+new-page: true 
+subtitle: Reformist disagreements with our policies have grown too severe.
+tags: event
+view-if: seeheimer_dissent >= 60
+on-arrival: seeheimer_strength *= 0.3; workers_spd -= 10; workers_fdp += 4; n_advisors -= 1 if braun_advisor == 1; n_advisors -= 1 if severing_advisor == 1; braun_advisor = 0; severing_advisor = 0; rb_strength -= 250; reformists_resign = 1
+max-visits: 1
+
+= Seeheimer leaders resign
+
+Our policy choices have greatly offended the Seeheimer faction. Many of our most experienced leaders have resigned.

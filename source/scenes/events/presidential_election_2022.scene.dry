@@ -1,6 +1,6 @@
 title: Presidential Election
 subtitle: Steinmeier runs for re-election...
-view-if: year = 2022 and (month = 2) and presidential_election_seen = 0 and russia_ukraine = 1
+view-if: year = 2022 and (month = 2) and presidential_election_seen = 0
 frequency: 1000
 max-visits: 1
 new-page: true
@@ -17,8 +17,6 @@ face-image: img/steinmeier_election.jpg
 The presidential election is coming up soon. While the position of President is nowhere near as powerful as it was during the Weimar Republic, [? if spd_in_government = 0 : it would still help us compensate for our exclusion from the current government ?][? if spd_in_government = 1 : it would still compliment our participation in the current government ?].
 
 Meanwhile, the far-right AfD has endorsed Max Otte of the CDU while Die Linke is campaigning behind the independent Gerhard Trabert. Both parties are aware that their candidates have no realistic chance at acquiring the presidency. Instead, these candidates are more likely to be publicity stunts.
-
-Amidst the backdrop of the Russo-Ukrainian War, analysts predict that the incumbent Frank-Walter Steinmeier will be easily re-elected.
 
 # this is supposed to be a Steinmeier landslide victory
 

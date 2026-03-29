@@ -2,8 +2,8 @@ title: Cancel action.
 view-if: last_advisor_action = 1
 go-to: root
 on-arrival: {!
-if (Q.month_actions > 0) {
-    Q.month_actions -= 1;
+if (Q.week_actions > 0) {
+    Q.week_actions -= 1;
 }
 Q.advisor_action_timer = 0;
 // Canceling an advisor action

@@ -2,8 +2,8 @@ title: Return card to hand.
 view-if: difficulty <= 0 and last_advisor_action = 0
 go-to: root
 on-arrival: {!
-if (Q.month_actions > 0) {
-    Q.month_actions -= 1;
+if (Q.week_actions > 0) {
+    Q.week_actions -= 1;
 }
 // return card to hand
 var card = this.state.lastPlayedCard;

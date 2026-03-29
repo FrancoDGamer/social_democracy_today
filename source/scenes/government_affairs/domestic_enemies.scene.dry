@@ -1,5 +1,5 @@
 title: Investigating Domestic Enemies
-on-arrival: month_actions += 1
+on-arrival: week_actions += 1
 view-if: spd_in_government = 1 and interior_minister_party = "SPD"
 #card-image: img/portraits/SeveringCarl.jpg
 #is-card: true

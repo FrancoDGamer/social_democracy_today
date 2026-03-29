@@ -24,7 +24,7 @@ As we are part of the current government, we are expected to provide a response 
 Meanwhile, several communist and workers' parties are drafting up a joint statement unequivocally condemning the conflict, criticizing the bourgeoise governments of both Russia and Ukraine.
 
 - @bundeswehr: We must significantly increase military spending in light of this invasion.
-- @sanctions: We must launch punitive sanctions on Russia in protest of this invasion.
+- @sanctions: We must slap punitive sanctions on Russia in protest of this invasion.
 - @affirm: Affirm our commitment to peace and diplomacy in Europe.
 - @criticize_hawkish: Criticize [+ foreign_minister +]'s hawkish speech.
 - @criticize_dovish: Criticize [+ foreign_minister +]'s dovish speech.
@@ -45,7 +45,7 @@ The countries in Eastern Europe, particularly Poland and the Baltics, are thrill
 subtitle: We must be quick to provide aid to Zelenskyy’s struggle. At the same time, we must cut economic ties with Russia.
 on-arrival: ukraine_stance = "Warhawk"; warhawkish += 1; budget -= 1; bundeswehr_loyalty += 0.02 if bundeswehr_loyalty < 1; nationalism += 4; left_dissent += 2; economic_growth -= 0.4; workers_afd += 4; unemployed_afd += 4; new_middle_afd += 2
 
-Even if Germany does not militarily intervene in the Russo-Ukranian conflict, we can join a coalition of European countries and impose strict sanctions against Russia. A quick scuffle follows to make Germany independent of Russian gas and oil. Both our anti-war membership and the center-right parties are dissatisfied with our vague stance. The AfD exploits our half-measures to draw away voters.
+Even if Germany does not militarily intervene in the Russo-Ukrainian conflict, we can join a coalition of European countries and impose strict sanctions against Russia. A quick scuffle follows to make Germany independent of Russian gas and oil. Both our anti-war membership and the center-right parties are dissatisfied with our vague stance. The AfD exploits our half-measures to draw away voters.
 
 @affirm
 subtitle: This invasion gives us a chance to atone for our militaristic past. As such, avoiding unnecessary escalation should be our priority.

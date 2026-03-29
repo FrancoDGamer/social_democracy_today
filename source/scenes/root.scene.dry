@@ -580,6 +580,7 @@ Q.stampfer_advisor = 0; // Friedrich Stampfer
 !}
 set-bg: img/map_2.jpg
 new-page: true
+go-to: difficulty-menu
 
 > "*Because, as Primo Levi, who was born in Turin 100 years ago and who survived Auschwitz as a forced labourer in Monowitz, later wrote: “It happened, therefore it can happen again.” So we cannot close our eyes and ears when people are being verbally abused, humiliated or marginalised. We must confront those who stir up prejudice and incite hatred against people of different faiths or origins.*"
 
@@ -589,10 +590,21 @@ This is a game of future speculation. While realism is a major concern, keep in 
 
 For more information on the politics and government of the German Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
+@difficulty_menu
 - @1928_easy: Begin (easy difficulty)
 - @1928_main: Begin (normal difficulty)
 - @1928_hard: Begin (hard difficulty)
 - @1928_historical: Begin (historical mode)
+- @credits
+
+@credits
+go-to: difficulty-menu
+
+Original Modder: AntonPayne
+Current Team Manager: FrancoGamer
+Coder: FrancoGamer & No One
+Content Designer: marcderkomische
+QA: Senator Livonia
 
 @1928_easy
 on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 80; linke_relation = 29; cdu_relation = 54; greens_relation = 64; budget = 5;

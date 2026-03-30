@@ -1,7 +1,7 @@
 title: Fundraising
 new-page: true
 view-if: fundraising_timer <= 0 and (not historical_mode)
-on-arrival: fundraising_timer = 6; week_actions += 1
+on-arrival: fundraising_timer = 6; month_actions += 1
 frequency: 300
 is-card: true
 card-image: img/poster2.jpg

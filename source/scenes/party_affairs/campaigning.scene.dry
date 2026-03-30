@@ -1,6 +1,6 @@
 title: Campaigning
 new-page: true
-on-arrival: week_actions += 1
+on-arrival: month_actions += 1
 max-visits: 36
 is-card: true
 card-image: img/IMG_3130-scaled.webp

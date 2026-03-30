@@ -34,5 +34,5 @@ Agriculture: [+ agriculture_minister +] ([+ agriculture_minister_party +])
 - @cancel_advisor_action
 
 @shuffle
-on-arrival: coalition_dissent += 1; week_actions += 1
+on-arrival: coalition_dissent += 1; month_actions += 1
 go-to: election_1928.ministries

@@ -2,7 +2,7 @@ title: Judiciary Reform
 new-page: true
 is-card: true
 view-if: spd_in_government = 1 and justice_minister_party = "SPD" and judiciary_timer = 0
-on-arrival: week_actions += 1; judiciary_timer += 6
+on-arrival: month_actions += 1; judiciary_timer += 6
 go-to: judge_menu
 card-image: img/portraits/RadbruchGustav.jpg
 tags: govt_affairs, cabinet

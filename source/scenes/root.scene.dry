@@ -228,6 +228,7 @@ Q.rural_qol = 100;
 Q.unemployed_qol = 100;
 Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
+Q.catholics_qol = 100
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics', 'muslims'];
 Q.parties = ['spd', 'linke', 'cdu', 'fdp', 'greens', 'afd', 'other'];

@@ -1,0 +1,24 @@
+title: The scene title
+tags: alpha, bravo
+
+This is the scene content.
+
+- @foo: The title for foo.
+- @bar
+
+
+@foo
+game-over: true
+
+This is section "foo".
+
+
+@bar
+title: The Bar Scene
+max-visits: 1
+count-visits-max: 5
+go-to: foo
+
+This is section "bar".
+
+- @foo: Return to foo.

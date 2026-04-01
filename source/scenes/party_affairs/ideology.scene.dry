@@ -29,7 +29,7 @@ if (Q.ideology && Q.ideology != "left") {
 go-to: changed if changed = 1
 on-departure: ideology = "left"; left_strength += 10; communist_coalition += 1; left_dissent -= 5; cdu_relation -= 3; greens_relation -= 5; nationalization_support += 1; linke_relation += 3
 
-The left wing of the party supports a return to our social democratic roots, and potentially a reconcilliation with the Communists.
+The left wing of the party supports a return to our social democratic roots, and potentially a reconcilliation with the Socialists.
 
 @neoliberal
 on-arrival: {!

@@ -560,6 +560,7 @@ Q.mutzenich_advisor = 0; // Rolf Mutzenich
 // neoliberal alternate advisors
 
 
+
 // Seeheimer advisors
 Q.severing_advisor = 0; // Carl Severing
 Q.klingbeil_advisor = 0; // Lars Klingbeil
@@ -582,6 +583,7 @@ Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
 Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = 0; // Friedrich Stampfer
+Q.turmer_advisor = 0; // Phillip Türmer, unsure if i want to put him to the left advisors due to his role in the 2026 local elections in Offenbach
 
 // Franco Stuff
 Q.ukraine_stance = "None";

@@ -362,10 +362,10 @@ if (Q.week_actions >= 1) {
     Q.inflation += 0.4;
     Q.economic_growth -= 0.2;
     }
-    if (Q.year = 2022 && Q.week == 1 && Q.month == 9) {
+    if (Q.year == 2022 && Q.week == 1 && Q.month == 9) {
     Q.inflation += 1.6;
     }
-    if (Q.inflation_crisis_solution == 1 && Q.year = 2023 && Q.week == 1) {
+    if (Q.inflation_crisis_solution == 1 && Q.year == 2023 && Q.week == 1) {
     Q.inflation -= 0.5;
     }
 

@@ -215,9 +215,11 @@ Q.income = 1600;
 // what about incomes for different classes? rural workers? middle-class workers?
 
 // inflation (in %; 1928: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BSPDRWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/rezession-betrachtung-032009.pdf?__blob=publicationFile
-Q.inflation = 3.1;
+Q.inflation = 2.0;
 
-Q.economic_growth = 2.7;
+Q.economic_growth = 6.0;
+
+Q.inflation_crisis_solution =  0;
 
 // economic expansion timer
 Q.economic_expansion = 0;

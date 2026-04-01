@@ -1,0 +1,40 @@
+title: Inflation Crisis
+subtitle: Inflation hits post-war highs
+view-if: year = 2022 and month = 9
+max-visits: 1
+new-page: true
+face-image: img/Kollwitz_Weavers.jpg
+tags: event
+
+= Inflation Crisis
+
+As inflation skyrockets in the wake of Russo-Ukranian War
+
+- @austerity: Commit to austerity
+- @west_energy: Look to the US
+- @east_energy: Open up talks with Russia
+- @ignore: Ignore the problem
+
+@austerity
+subtitle: Cut welfare spending to try and combat inflation
+on-arrival: welfare -= 1; budget += 1; capital_strike_progress -= 2; labor_strength -= 5; labor_dissent += 5; left_dissent += 5; workers_spd -= 5; coalition_dissent -= 1; inflation -= 1; unemployed_spd -= 6 ; center_dissent +=5; new_middle_spd += 2 ; old_middle_spd += 3 ; inflation_crisis_solution=1
+
+As much as Union and FDP love our commitment to austerity, or base takes quite the opposite stance.
+
+@west_energy
+subtitle: Talk with the US about importing more gas and oil
+on-arrival: west_relation -=1 ; inflation -=1 ; budget -= 1 ; workers_spd += 6 ; unemployed_spd += 3 ; new_middle_spd += 3 ; old_middle_spd += 3 ; rural_spd += 3 ; coalition_dissent -= 1 ; inflation_crisis_solution=1
+
+Even though most workers grudgingly accept the our intervention, there is deep bitterness developing against the SPD, especially among the more radical workers. The Communists stand to gain.
+
+@east_energy
+subtitle: The EU & US will not like this
+on-arrival: west_relation -=3 ; east_relation -= 2 ; inflation -= 1 ; workers_spd += 4 ; unemployed_spd += 2 ; new_middle_spd += 1 ; old_middle_spd += 1 ; rural_spd += 1 ; coalition_dissent += 1 ; inflation_crisis_solution=1
+
+While resuming our energy trade with Russia does fix the issue; it is no overly popular with the people nor the west.
+
+@ignore
+subtitle: Surely it will solve itself
+on-arrival: inflation += 1; unemployed_spd -= 6 ; workers_spd -= 6 ; new_middle_spd -= 3 ; old_middle_spd -= 3
+
+Nobody benefits from this. If we are to fix this solution, then more will need to be done.

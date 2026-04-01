@@ -18,11 +18,27 @@
 
   var TITLE = "Social Democracy: An Alternate History" + '_' + "Autumn Chen";
 
+  // the url is a link to game.json
+  // test url: https://aucchen.github.io/social_democracy_mods/v0.1.json
+  // TODO; 
+  window.loadMod = function(url) {
+      ui.loadGame(url);
+  };
+
   window.showStats = function() {
-    if (window.dendryUI.dendryEngine.state.sceneId.startsWith('stats')) {
+    if (window.dendryUI.dendryEngine.state.sceneId.startsWith('library')) {
         window.dendryUI.dendryEngine.goToScene('backSpecialScene');
     } else {
-        window.dendryUI.dendryEngine.goToScene('stats');
+        window.dendryUI.dendryEngine.goToScene('library');
+    }
+  };
+
+  window.showMods = function() {
+    window.hideOptions();
+    if (window.dendryUI.dendryEngine.state.sceneId.startsWith('mod_loader')) {
+        window.dendryUI.dendryEngine.goToScene('backSpecialScene');
+    } else {
+        window.dendryUI.dendryEngine.goToScene('mod_loader');
     }
   };
   
@@ -77,7 +93,7 @@
       window.dendryUI.animate_bg = true;
       window.dendryUI.saveSettings();
   };
-  
+
   window.disableAudio = function() {
       window.dendryUI.toggle_audio(false);
       window.dendryUI.saveSettings();
@@ -98,12 +114,12 @@
       window.dendryUI.saveSettings();
   };
 
-
   // populates the checkboxes in the options view
   window.populateOptions = function() {
     var disable_bg = window.dendryUI.disable_bg;
     var animate = window.dendryUI.animate;
-    var animate_bg = window.dendryUI.animate_bg;
+    var disable_audio = window.dendryUI.disable_audio;
+    var show_portraits = window.dendryUI.show_portraits;
     if (disable_bg) {
         $('#backgrounds_no')[0].checked = true;
     } else {
@@ -114,18 +130,58 @@
     } else {
         $('#animate_no')[0].checked = true;
     }
-    if (animate_bg) {
-        $('#animate_bg_yes')[0].checked = true;
+    if (disable_audio) {
+        $('#audio_no')[0].checked = true;
     } else {
-        $('#animate_bg_no')[0].checked = true;
+        $('#audio_yes')[0].checked = true;
+    }
+    if (show_portraits) {
+        $('#images_yes')[0].checked = true;
+    } else {
+        $('#images_no')[0].checked = true;
     }
   };
+
   
   // This function allows you to modify the text before it's displayed.
   // E.g. wrapping chat-like messages in spans.
-  window.displayText = function(text) {
-      return text;
-  };
+  
+window.displayText = function (text) {
+    return applyWholesome(text);
+};
+
+function applyWholesome(str) {
+    const allWords = new Set([
+        ...tooltipList.map(t => t.searchString),
+        ...colourList.map(c => c.word)
+    ]);
+
+    const regex = new RegExp(`\\b(${[...allWords].join('|')})\\b`, 'g');
+
+    return str.replace(/(<(?:span|strong)[^>]*>.*?<\/(?:span|strong)>|<[^>]+>|[^<]+)/g, (segment) => {
+        if (segment.startsWith('<')) return segment;
+
+        return segment.replace(regex, (match) => {
+            const tooltip = tooltipList.find(t => t.searchString === match);
+            const colour = colourList.find(c => c.word === match);
+
+            let style = colour ? colour.style : '';
+            let innerText = match;
+
+            if (colour && colour.img) {
+                innerText = `<img src="${colour.img}" class="p_icon" alt="">${innerText}`;
+            }
+
+            if (tooltip) {
+                return `<span class='mytooltip' style='${style}'>${innerText}<span  class='mytooltiptext'>${tooltip.explanationText}</span></span>`;
+            } else if (colour) {
+                return `<span style='${style}'>${innerText}</span>`;
+            }
+
+            return match;
+        });
+    });
+}
 
   // This function allows you to do something in response to signals.
   window.handleSignal = function(signal, event, scene_id) {
@@ -142,23 +198,81 @@
     }
   };
 
+  // TODO: have some code for tabbed sidebar browsing.
   window.updateSidebar = function() {
       $('#qualities').empty();
-      var scene = dendryUI.game.scenes.status;
+      var scene = dendryUI.game.scenes[window.statusTab];
+      dendryUI.dendryEngine._runActions(scene.onArrival);
       var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
       $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
+  };
+
+  window.changeTab = function(newTab, tabId) {
+      if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
+          window.alert('Polls are not available in historical mode.');
+          return;
+      }
+      var tabButton = document.getElementById(tabId);
+      var tabButtons = document.getElementsByClassName('tab_button');
+      for (i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].className = tabButtons[i].className.replace(' active', '');
+      }
+      tabButton.className += ' active';
+      window.statusTab = newTab;
+      window.updateSidebar();
   };
 
   window.onDisplayContent = function() {
       window.updateSidebar();
   };
 
+  /*
+   * This function copied from the code for Infinite Space Battle Simulator
+   *
+   * quality - a number between max and min
+   * qualityName - the name of the quality
+   * max and min - numbers
+   * colors - if true/1, will use some color scheme - green to yellow to red for high to low
+   * */
+  window.generateBar = function(quality, qualityName, max, min, colors) {
+      var bar = document.createElement('div');
+      bar.className = 'bar';
+      var value = document.createElement('div');
+      value.className = 'barValue';
+      var width = (quality - min)/(max - min);
+      if (width > 1) {
+          width = 1;
+      } else if (width < 0) {
+          width = 0;
+      }
+      value.style.width = Math.round(width*100) + '%';
+      if (colors) {
+          value.style.backgroundColor = window.probToColor(width*100);
+      }
+      bar.textContent = qualityName + ': ' + quality;
+      if (colors) {
+          bar.textContent += '/' + max;
+      }
+      bar.appendChild(value);
+      return bar;
+  };
+
+
   window.justLoaded = true;
+  window.statusTab = "status";
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
   window.onload = function() {
-    window.dendryUI.loadSettings();
+    window.dendryUI.loadSettings({show_portraits: false});
+    window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
   };
 
 }());
+
+document.addEventListener('mousemove', e => {
+    document.querySelectorAll('.mytooltiptext').forEach(el => {
+        el.style.setProperty('--mouse-x', e.clientX + 'px');
+        el.style.setProperty('--mouse-y', e.clientY + 'px');
+    });
+});

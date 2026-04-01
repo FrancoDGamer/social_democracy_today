@@ -1,0 +1,31 @@
+title: Coalition Negotiations
+new-page: true
+is-card: true
+tags: govt_affairs
+frequency: 500
+on-arrival: week_actions += 1; coalition_affairs_timer = 5
+view-if: (traffic_light_coalition ) and coalition_dissent >= 1 and coalition_affairs_timer <= 0
+card-image: https://www.tagesspiegel.de/images/10884658/alternates/BASE_1_1_W1000/1713972463000/bundestag.jpeg
+
+= Coalition Negotiations
+
+  Coalitioning is always a game of giving and taking. However beeing the largest Party means that we can finally implement more of our Agenda. Let the other Parties know who sets the tone in this Country!
+
+- @pressure_deficit: Pressure the FDP to take larger loans.
+- @pressure_rights: Pressure the FDP to give us more leeway for our worker's and unemployment rights reforms.
+- @pressure_delay: Pressure the Greens to water-down some of their envriomental plans.
+- @pressure_dovish: Pressure the Greens to let us send less millitary aid to Ukraine.
+
+  @pressure_deficit
+  subtitle: +2 Budget. This will be ugly...
+  unavailable-subtitle: If you really want to end the Coalition this would be the way to go.
+  choose_if: fdp_relation >= 50
+  on-arrival: budget += 2; fdp_relation -= 25; workers_spd += 2; new_middle_spd += 2; old_middle_spd -= 2; workers_greens += 2; new_middle_greens += 2; old_middle_greens -= 2; old_middle_fdp -= 4; new_middle_fdp -= 4; old_middle_cdu += 3; new_middle_cdu; += 3; coalitions_dissent += 2
+
+    After weeks of debates and threats the FDP finally folds. While these new funds are greatly appreciated in our Ministries this affair has greatly damaged our Coalition stabillity as well as led to a poll increase for the CDU at the expense of our Liberal Partners.
+
+    Now a new Question arises: Is there something brewing at the Reinhardtstreet?
+
+    //work in progress
+
+  

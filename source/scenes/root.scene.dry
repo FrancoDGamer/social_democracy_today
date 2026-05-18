@@ -558,7 +558,6 @@ Q.levi_advisor = 0; // Paul Levi
 Q.levi_dead = 0;
 Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
 Q.mutzenich_advisor = 0; // Rolf Mutzenich
-Q.kuhnert_advisor = 0; // Kevin Kühnert
 
 // neoliberal alternate advisors
 

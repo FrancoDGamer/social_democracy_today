@@ -37,9 +37,9 @@ max-cards: 4
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-[? if year = 2021 and month = 7: CDU candidate Armin Laschet was pictured boyishly laughing while attending a speech in the flood-stricken town of Ergtstadt. This lapse has caused his polls to tank. ?]
+[? if year = 2021 and month = 7 and week = 1: CDU candidate Armin Laschet was pictured boyishly laughing while attending a speech in the flood-stricken town of Ergtstadt. This lapse has caused his polls to tank. ?]
 
-[? if year = 2021 and month = 6: Annalena Baerbock has been made Candidate of the Greens. Luckily, her gaffes and (definitly exaggerated) scandals have largely stopped their intrusion into our base?]
+[? if year = 2021 and month = 6: and week = 3: Annalena Baerbock has been made Candidate of the Greens. Luckily, her gaffes and (definitly exaggerated) scandals have largely stopped their intrusion into our base?]
 
 - @party
 - @govt

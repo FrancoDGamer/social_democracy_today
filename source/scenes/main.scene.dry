@@ -37,9 +37,7 @@ max-cards: 4
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-[? if year = 2021 and month = 7 and week = 1: CDU candidate Armin Laschet was pictured boyishly laughing while attending a speech in the flood-stricken town of Ergtstadt. This lapse has caused his polls to tank. ?]
-
-[? if year = 2021 and month = 6: and week = 3: Annalena Baerbock has been made Candidate of the Greens. Luckily, her gaffes and (definitly exaggerated) scandals have largely stopped their intrusion into our base?]
+[? if year = 2021 and month = 7: CDU candidate Armin Laschet was pictured boyishly laughing while attending a speech in the flood-stricken town of Ergtstadt. This lapse has caused his polls to tank. ?]
 
 - @party
 - @govt
@@ -49,7 +47,7 @@ max-cards: 4
 
 @party
 title: Party Affairs
-card-image: https://s3-eu-west-1.amazonaws.com/editor.production.pressmatrix.com/emags/327356/covers/uncut_x2/b333078950b2412b0535..jpg?1736934591
+card-image: img/Vorwaerts_nr_1.png
 is-deck: true
 
 - #party_affairs
@@ -57,7 +55,7 @@ is-deck: true
 @govt
 title: Government Affairs
 view-if: time >= 6
-card-image: https://www.phoenix.de/sixcms/media.php/16/thumbnails/21-4592952%2C%28epa%2C%2CU15_12_2021%29%2CGerman_Bundestag_session.jpg.3418807.jpg.3418812.jpg
+card-image: img/reichstag_2.jpg
 is-deck: true
 
 - #govt_affairs
